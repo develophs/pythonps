@@ -1,16 +1,40 @@
-# This is a sample Python script.
+from collections import deque
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    graph = {
+        "A": ["B", "C", "D"],
+        "B": ["A", "G"],
+        "C": ["A", "F"],
+        "D": ["A", "E"],
+        "E": ["D"],
+        "F": ["C", "H"],
+        "G": ["B"],
+        "H": ["F"]
+    }
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    def bfs(cur_v):
+        visited = [cur_v]
+        q = deque(cur_v)
+
+        while q:
+            cur = q.popleft()
+
+            for v in graph[cur]:
+                if v not in visited:
+                    visited.append(v)
+                    q.append(v)
+
+        return visited
+
+
+    visited = []
+    def dfs(cur_v):
+        visited.append(cur_v)
+
+        for v in graph[cur_v]:
+            if v not in visited:
+                dfs(v)
+
+        return visited
+    #print(bfs("A"))
+    print(dfs("A"))
