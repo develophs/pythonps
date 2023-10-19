@@ -25,8 +25,5 @@ if __name__ == '__main__':
         heapq.heappush(heap, x+y)
         values.append(x+y)
 
-    sum = 0
-    for value in values:
-        sum += value
-
-    print(sum)
+    # 파이썬 내장함수 sum() : 배열에 존재하는 아이템들의 값들을 더해준다.
+    print(sum(values))
