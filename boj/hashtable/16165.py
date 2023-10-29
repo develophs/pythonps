@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # key값을 리턴해주는 메소드
     def find_group_name(mem_name):
         for key, value in memo.items():
-            if value.__contains__(mem_name):
+            if mem_name in value:
                 return key
 
     # 해시테이블의 벨류로 리스트를 가진다.
