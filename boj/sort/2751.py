@@ -3,7 +3,7 @@ from sys import stdin
 if __name__ == '__main__':
 
     # 1 <= N <= 1,000,000 (2**20)
-    # O(logN) >> 20
+    # O(NlogN) >> 1000000 * 20
     n = int(stdin.readline())
     my_nums = []
 
