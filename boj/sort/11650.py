@@ -2,6 +2,10 @@ from sys import stdin
 
 if __name__ == '__main__':
     # O(NlogN)
+    """
+    파이썬 내장함수는 튜플을 정렬할때 0번째 인덱스로만 비교하여 정렬한다
+    따라서 sort(key=lambda)문법을 사용하여 정렬 기준을 세워주어야한다. 
+    """
     n = int(stdin.readline())
 
     graph = []
